@@ -27,6 +27,7 @@ test:
 about:
   home: https://biopax.github.io/validator/
   dev_url: https://github.com/BioPAX/validator
+  doc_url: https://biopax.github.io/validator/
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -40,3 +41,12 @@ about:
 extra:
   identifiers:
     - doi:10.1093/bioinformatics/btt452
+  notes: |
+    Two wrapper scripts are installed on $PATH. "biopax-validator" validates
+    offline and loads the required ontologies locally. "biopax-validator-client"
+    sends the data to the remote BioPAX Validator service.
+    JVM options are passed through the JAVA_OPTS environment variable, e.g.
+    JAVA_OPTS="-Xmx4g" biopax-validator input.owl --output=report.html
+    Upstream recommends at least 2 GB of heap. Startup takes about a minute
+    while the ontologies are loaded. Example input files are installed in
+    $CONDA_PREFIX/share/biopax-validator-<version>/sampleData.
